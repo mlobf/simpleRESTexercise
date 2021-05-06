@@ -27,4 +27,8 @@ Add Filtros por nome da entidade.
       ->Imovel.
             Feito filtro por nome
 ----------------------------------------------------------------------------------------------------------
-
+Add Paginacao no filtro de listagem.
+      ->Imobiliaria.
+          
+      ->Imovel.
+          

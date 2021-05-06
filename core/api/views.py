@@ -1,4 +1,4 @@
-from rest_framework import generics, filters
+from rest_framework import generics, filters, pagination
 from core.models import Imovel, Imobiliaria
 from core.api.serializers import ImovelSerializer, ImobiliariaSerializer
 
