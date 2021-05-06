@@ -1,0 +1,30 @@
+O objetivo desta prova é desenvolver uma API REST para controlar o registro de imóveis e
+imobiliárias. Nessa aplicação deverão conter l ​ istagem​, ​ cadastro​, ​ edição​ e d
+​ eleção​ das entidades
+abaixo:
+
+Imóvel
+  ● Nome*
+  ● Endereço *
+  ● Descrição *
+  ● Status: Ativo ou Inativo *
+  ● Características (Número de quartos, salas, banheiros, vagas de garagem, etc...)
+  ● Tipo (Apartamento, Casa) *
+  ● Finalidade (Residencial, Escritório)
+  ● Imobiliária *
+
+Imobiliária
+  ● Nome*
+  ● Endereço
+
+Os endpoints de listagem devem conter paginação e a opção de filtro pelo nome das entidades.
+Todos os campos com "*" deverão ser o
+​ brigatórios e​ ​ validados.
+----------------------------------------------------------------------------------------------------------
+Add Filtros por nome da entidade.
+      ->Imobiliaria.
+            Feito filtro por nome
+      ->Imovel.
+            Feito filtro por nome
+----------------------------------------------------------------------------------------------------------
+
