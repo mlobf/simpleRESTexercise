@@ -9,10 +9,10 @@ class Imovel(models.Model):
         verbose_name_plural = "Imoveis"
 
     nome = models.CharField(max_length=255, null=False, blank=False)  #
-    descricao = models.TextField(max_length=255, null=False, blank=False)  #
-    status = models.BooleanField(default=True)  #
-    caracteristicas = models.CharField(max_length=255, null=False, blank=False)
-    finalidade = models.CharField(max_length=255, null=False, blank=False)
+    # descricao = models.TextField(max_length=255, null=False, blank=False)  #
+    # status = models.BooleanField(default=True)  #
+    # caracteristicas = models.CharField(max_length=255, null=False, blank=False)
+    # finalidade = models.CharField(max_length=255, null=False, blank=False)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     rating = models.PositiveIntegerField(
@@ -32,51 +32,15 @@ class Imobiliaria(models.Model):
         verbose_name_plural = "Imobiliarias"
 
     nome = models.CharField(max_length=255, null=False, blank=False)
-    contato = models.CharField(max_length=255, null=False, blank=False)
-    telefone = models.CharField(max_length=255, null=False, blank=False)
-    status = models.BooleanField(default=True)  #
-    imovel = models.ForeignKey(
-        Imovel, on_delete=models.CASCADE, related_name="imobiliaria"
-    )
+    # contato = models.CharField(max_length=255, null=False, blank=False)
+    # telefone = models.CharField(max_length=255, null=False, blank=False)
+    # status = models.BooleanField(default=True)  #
+
+    # imovel = models.ForeignKey(Imovel, on_delete=models.CASCADE, related_name="imobiliaria")
+    imovel = models.ForeignKey(Imovel, models.SET_NULL, blank=True, null=True)
+
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.nome
-
-
-class Endereco(models.Model):
-    class Meta:
-        ordering = ["id"]
-        verbose_name = "Endereco"
-        verbose_name_plural = "Enderecos"
-
-    estado = models.CharField(max_length=255, null=False, blank=False)
-    cidade = models.CharField(max_length=255, null=False, blank=False)
-    bairro = models.CharField(max_length=255, null=False, blank=False)
-    rua = models.CharField(max_length=255, null=False, blank=False)
-    numero = models.CharField(max_length=255, null=False, blank=False)
-    cep = models.CharField(max_length=255, null=False, blank=False)
-
-    # Date Field
-    created = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)
-
-    def __str__(self):
-        return self.id
-
-
-class Tipo(models.Model):
-    class Meta:
-        ordering = ["id", "categoria"]
-        verbose_name = "Tipo"
-        verbose_name_plural = "Tipos"
-
-    categoria = models.CharField(max_length=255, null=False, blank=False)
-    imovel = models.ForeignKey(Imovel, on_delete=models.CASCADE, related_name="tipo")
-    status = models.BooleanField(default=True)  #
-    created = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)
-
-    def __str__(self):
-        return self.categoria
