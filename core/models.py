@@ -2,6 +2,15 @@ from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
 
 
+RESIDENCIAL = "residencial"
+COMERCIAL = "comercial"
+
+FINALIDADE = (
+    (RESIDENCIAL, "Residencial"),
+    (COMERCIAL, "Comercial"),
+)
+
+
 class Endereco(models.Model):
     class Meta:
         verbose_name = "Endereco"
@@ -26,6 +35,14 @@ class Endereco(models.Model):
 
 
 class Imobiliaria(models.Model):
+    ATIVO = "ativo"
+    INATIVO = "inativo"
+
+    STATUS = (
+        (ATIVO, "Ativo"),
+        (INATIVO, "Inativo"),
+    )
+
     class Meta:
         ordering = ["id", "nome"]
         verbose_name = "Imobiliaria"
@@ -35,7 +52,7 @@ class Imobiliaria(models.Model):
     endereco = models.ManyToManyField(Endereco, related_name="imobiliaria_endereco")
     # contato = models.CharField(max_length=255, null=False, blank=False)
     # telefone = models.CharField(max_length=255, null=False, blank=False)
-    # status = models.BooleanField(default=True)  #
+    status = models.CharField(choices=STATUS, max_length=6)  #
     # imovel = models.ForeignKey(Imovel, on_delete=models.CASCADE, related_name="imobiliaria")
     # imovel = models.ManyToManyField(Imovel, related_name="Imoveis")
 
@@ -44,6 +61,23 @@ class Imobiliaria(models.Model):
 
 
 class Imovel(models.Model):
+
+    ATIVO = "ativo"
+    INATIVO = "inativo"
+
+    STATUS = (
+        (ATIVO, "Ativo"),
+        (INATIVO, "Inativo"),
+    )
+
+    CASA = "casa"
+    APARTAMENTO = "apartamento"
+
+    TIPO = (
+        (CASA, "Casa"),
+        (APARTAMENTO, "Apartamento"),
+    )
+
     class Meta:
         ordering = ["id", "nome"]
         verbose_name = "Imovel"
@@ -51,12 +85,15 @@ class Imovel(models.Model):
 
     nome = models.CharField(max_length=255, null=False, blank=False)  # Obrigatorio
     # descricao = models.TextField(max_length=255, null=False, blank=False)  # Obrigatorio
-    # status = models.BooleanField(default=True, blank=False)  # Obrigatorio
+    status = models.CharField(choices=STATUS, max_length=6)  #
     # caracteristicas = models.CharField(max_length=255, null=False, blank=False)
-    # tipo = models.CharField(max_length=255, null=False, blank=False)
-    # finalidade = models.CharField(max_length=255, null=False, blank=True)  # finalidade
+    tipo = models.CharField(choices=TIPO, max_length=6)  #
+    finalidade = models.CharField(choices=FINALIDADE, max_length=6)  #
     # Link to Imobiliaria
-    imobiliaria = models.ManyToManyField(Imobiliaria, related_name="Imobiliarias")
+    imobiliaria = models.ManyToManyField(
+        Imobiliaria, blank=False, related_name="Imobiliarias"
+    )
+
     endereco = models.ManyToManyField(Endereco, related_name="imovel_endereco")
 
     def __str__(self):

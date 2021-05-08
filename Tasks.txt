@@ -3,19 +3,19 @@ imobiliárias. Nessa aplicação deverão conter listagem​, ​ cadastro​, �
 ​ eleção​ das entidades
 abaixo:
 
-Imóvel
-  ● Nome*
-  ● Endereço *
-  ● Descrição *
-  ● Status: Ativo ou Inativo *
-  ● Características (Número de quartos, salas, banheiros, vagas de garagem, etc...)
-  ● Tipo (Apartamento, Casa) *
-  ● Finalidade (Residencial, Escritório)
-  ● Imobiliária *
+imóvel
+  ● nome*
+  ● endereço *
+  ● descrição *
+  ● status: ativo ou inativo *
+  ● características (número de quartos, salas, banheiros, vagas de garagem, etc...)
+  ● tipo (apartamento, casa) *
+  ● finalidade (residencial, escritório)
+  ● imobiliária *
 
-Imobiliária
-  ● Nome*
-  ● Endereço
+imobiliária
+  ● nome*
+  ● endereço
 
 Os endpoints de listagem devem conter paginação e a opção de filtro pelo nome das entidades.
 Todos os campos com "*" deverão ser obrigatórios e​ ​ validados.
@@ -33,3 +33,19 @@ Add Paginacao no filtro de listagem.
             Feito via settings
 ----------------------------------------------------------------------------------------------------------
 Add campos obrigatórios e​ ​validados.
+----------------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------------
+imóvel
+  ● nome*
+  ● endereço *
+  ● descrição *
+  @@@@@● status: ativo ou inativo * 
+  ● características (número de quartos, salas, banheiros, vagas de garagem, etc...)
+  @@@@@● tipo (apartamento, casa) *
+  ● finalidade (residencial, escritório)
+  ● imobiliária *
+
+imobiliária
+  ● nome*
+  ● endereço

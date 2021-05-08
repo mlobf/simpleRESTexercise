@@ -1,9 +1,20 @@
 from rest_framework import generics, filters
-from core.models import Imovel, Imobiliaria
+
+from rest_framework.views import APIView
+
+from core.models import Imovel, Imobiliaria, Endereco
 from core.api.serializers import ImovelSerializer, ImobiliariaSerializer
+from django.http import JsonResponse, HttpResponse
 
 # ------------------      Imovel           -------------------------------------#
 class ImovelListCreateAPIView(generics.ListCreateAPIView):
+    queryset = Imovel.objects.all().order_by("-id")
+    serializer_class = ImovelSerializer
+    # search_fields = ["nome"]
+    # permission_classes = [IsAdminUserOrReadOnly]
+
+
+class ImovelCreateAPIView(generics.CreateAPIView):
     queryset = Imovel.objects.all().order_by("-id")
     serializer_class = ImovelSerializer
     # search_fields = ["nome"]
@@ -17,6 +28,7 @@ class ImovelDetailAPIview(generics.RetrieveUpdateDestroyAPIView):
     # permission_classes = [IsAdminUserOrReadOnly]
 
 
+# -----------------------------------------------
 class ImovelListAPIView(generics.ListAPIView):
     queryset = Imovel.objects.all()
     serializer_class = ImovelSerializer
