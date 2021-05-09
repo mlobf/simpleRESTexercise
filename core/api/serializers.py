@@ -5,7 +5,7 @@ from core.models import Imovel, Imobiliaria
 class ImobiliariaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Imobiliaria
-        fields = ["name", "endereço"]
+        fields = ["id", "nome", "endereço"]
 
 
 class ImovelSerializer(serializers.ModelSerializer):

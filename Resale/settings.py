@@ -131,5 +131,5 @@ REST_FRAMEWORK = {
     #
     # "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.IsAuthenticated",),
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
-    "PAGE_SIZE": 10,  # 10 could be a good value to assign
+    "PAGE_SIZE": 5,  # 5 could be a good value to assign
 }
