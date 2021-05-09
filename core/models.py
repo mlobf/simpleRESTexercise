@@ -54,7 +54,10 @@ class Imovel(models.Model):
     finalidade = models.CharField(choices=FINALIDADE, max_length=20)
     endereco = models.CharField(max_length=255, null=False, blank=False)
     imobiliaria = models.ForeignKey(
-        Imobiliaria, on_delete=models.CASCADE, null=False, related_name="imobiliaria"
+        Imobiliaria,
+        on_delete=models.SET("1"),
+        null=False,
+        related_name="imobiliaria",
     )
 
     def __str__(self):
