@@ -4,6 +4,8 @@ from core.api.views import (
     ImovelListCreateAPIView,
     ImovelListAPIView,
     ImovelCreateAPIView,
+    ImovelDestroyAPIView,
+    ImovelUpdateAPIView,
     ImobiliariaDetailAPIview,
     ImobiliariaListCreateAPIView,
     ImobiliariaListAPIView,
@@ -12,8 +14,10 @@ from core.api.views import (
 urlpatterns = [
     # -------------------------------------------------------------------------------------------------#
     path("imovel/<int:pk>/", ImovelDetailAPIview.as_view(), name="imovel-detail"),
-    path("imovel/", ImovelListCreateAPIView.as_view(), name="imovel-list"),
-    path("imovel/search", ImovelListAPIView.as_view(), name="imovel-search"),
+    path("imovel/<int:pk>/", ImovelDestroyAPIView.as_view(), name="imovel-delete"),
+    path("imovel/<int:pk>/", ImovelUpdateAPIView.as_view(), name="imovel-update"),
+
+    path("imovel/", ImovelListAPIView.as_view(), name="imovel-list"),
     path("imovel/create", ImovelCreateAPIView.as_view(), name="imovel-create"),
     # -------------------------------------------------------------------------------------------------#
     path(

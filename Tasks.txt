@@ -49,3 +49,11 @@ imóvel
 imobiliária
   ● nome*
   ● endereço
+
+  -------------------------------------
+
+  Aplicando a Obrigatoriedade dos campos many to many 
+      de 
+      Imovel
+            Imobiliaria.
+  

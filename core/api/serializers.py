@@ -1,23 +1,22 @@
 from rest_framework import serializers
-from core.models import Imovel, Imobiliaria, Endereco
-
-
-class ImovelSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Imovel
-        fields = "__all__"
-        depth = 10
+from core.models import Imovel, Imobiliaria
 
 
 class ImobiliariaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Imobiliaria
-        fields = "__all__"
-        depth = 10
+        fields = ["name", "endereço"]
 
 
-class EnderecoSerializer(serializers.ModelSerializer):
+class ImovelSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = Endereco
-        fields = "__all__"
-        depth = 10
+        model = Imovel
+        fields = [
+            "id",
+            "nome",
+            "status",
+            "tipo",
+            "finalidade",
+            "endereco",
+            "imobiliaria",
+        ]
