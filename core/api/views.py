@@ -70,5 +70,4 @@ class ImobiliariaListAPIView(generics.ListAPIView):
 
     search_fields = ["nome"]
 
-
 # ---------------------------------------------------------------------------#

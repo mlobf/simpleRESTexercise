@@ -16,10 +16,12 @@ urlpatterns = [
     path("imovel/<int:pk>/", ImovelDetailAPIview.as_view(), name="imovel-detail"),
     path("imovel/<int:pk>/", ImovelDestroyAPIView.as_view(), name="imovel-delete"),
     path("imovel/<int:pk>/", ImovelUpdateAPIView.as_view(), name="imovel-update"),
-
-    path("imovel/", ImovelListAPIView.as_view(), name="imovel-list"),
     path("imovel/create", ImovelCreateAPIView.as_view(), name="imovel-create"),
+    path("imovel/", ImovelListAPIView.as_view(), name="imovel-list"),
+
+
     # -------------------------------------------------------------------------------------------------#
+
     path(
         "imobiliaria/<int:pk>/",
         ImobiliariaDetailAPIview.as_view(),

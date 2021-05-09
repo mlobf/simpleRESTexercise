@@ -8,7 +8,7 @@ class ImobiliariaSerializer(serializers.ModelSerializer):
         fields = ["name", "endereço"]
 
 
-class ImovelSerializer(serializers.HyperlinkedModelSerializer):
+class ImovelSerializer(serializers.ModelSerializer):
     class Meta:
         model = Imovel
         fields = [
