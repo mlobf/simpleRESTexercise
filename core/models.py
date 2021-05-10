@@ -34,7 +34,7 @@ class Imobiliaria(models.Model):
         verbose_name_plural = "Imobiliarias"
 
     nome = models.CharField(max_length=255, null=False, blank=False)  # Obrigatorio
-    endereço = models.CharField(max_length=255, null=False, blank=False)  # Obrigatorio
+    endereço = models.CharField(max_length=255, null=True, blank=True)  # Obrigatorio
 
     def __str__(self):
         return self.nome
@@ -46,13 +46,13 @@ class Imovel(models.Model):
         verbose_name = "Imovel"
         verbose_name_plural = "Imoveis"
 
-    nome = models.CharField(max_length=255, null=False, blank=False)  # Obrigatorio
-    # descricao = models.TextField(max_length=255, null=False, blank=False)  # Obrigatorio
+    nome = models.CharField(max_length=100, null=False, blank=False)  # Obrigatorio
+    endereco = models.CharField(max_length=100, null=False, blank=False)  # Obrigatorio
+    descricao = models.TextField(max_length=255, null=False, blank=False)  # Obrigatorio
     status = models.CharField(choices=STATUS, max_length=20)  #
-    # caracteristicas = models.CharField(max_length=255, null=False, blank=False)
+    caracteristicas = models.TextField(max_length=255, null=True, blank=True)
     tipo = models.CharField(choices=TIPO, max_length=20)  #
     finalidade = models.CharField(choices=FINALIDADE, max_length=20)
-    endereco = models.CharField(max_length=255, null=False, blank=False)
     imobiliaria = models.ForeignKey(
         Imobiliaria,
         on_delete=models.SET("1"),

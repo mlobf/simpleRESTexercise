@@ -14,9 +14,11 @@ class ImovelSerializer(serializers.ModelSerializer):
         fields = [
             "id",
             "nome",
+            "endereco",
+            "descricao",
             "status",
+            "caracteristicas",
             "tipo",
             "finalidade",
-            "endereco",
             "imobiliaria",
         ]
