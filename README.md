@@ -122,12 +122,16 @@ do Django.
     nome: IMOBILIARIA PADRAO
     ENDERECO: ENDERECO PADRAO
 
-----------------------------------------------------------------------
 
 Pronto, agora vc pode criar tanto novos Imoveis quanto novas Imobiliarias,
 desde que vc nao apague a imobiliaria padrao.
 
-A Documentacao de uso da API sera disponibilizada no seguinte endereço:
-    ------
+----------------------------------------------------------------------
+Documentação de Uso da Api
+
+----------------------------------------------------------------------
+
+A Documentacao de uso da API foi gerada por meio do Postman e sera disponibilizada 
+no seguinte endereço:
 
 
