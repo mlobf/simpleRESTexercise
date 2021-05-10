@@ -108,3 +108,26 @@ Sexto Passo - Criando Super Usuario e entrando na Tela de Administração
 do Django.
 
 ----------------------------------------------------------------------
+  1-Dentro da pasta Resale digite no terminal:
+  python manage.py runserver
+
+  2- Entre com seu navegador na Url gerada no terminal e nela complemente
+  o endereço com /admin.
+
+  3- Loging como super usuario e Adicione 
+     !!!!!OBRIGATORIAMENTE!!!!!!
+
+    A IMOBILIARIA PADRAO, com os seguintes campos.
+
+    nome: IMOBILIARIA PADRAO
+    ENDERECO: ENDERECO PADRAO
+
+----------------------------------------------------------------------
+
+Pronto, agora vc pode criar tanto novos Imoveis quanto novas Imobiliarias,
+desde que vc nao apague a imobiliaria padrao.
+
+A Documentacao de uso da API sera disponibilizada no seguinte endereço:
+    ------
+
+
