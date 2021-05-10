@@ -1,5 +1,6 @@
 ----------------------------------------------------------------------
-- Como realizar o Run Server em sua Maquina Local.
+- Como realizar o Run Server em sua Maquina Local e deixar o programa
+    pronto para o desenvolvimento.
 
 ----------------------------------------------------------------------
 
@@ -57,11 +58,53 @@ Segundo Passo - O Repositorio.
 
   Clonar o repositorio:
   
-  git clone https://github.com/mlobf/TestDev.git
+  1-git clone https://github.com/mlobf/TestDev.git
 
   No caso de algum imprevisto, o repositorio tambem estara disponivel via 
   google drive com o endereço compartilhado por email para d​iego@resale.com.br​.
 
+----------------------------------------------------------------------
+Terceiro Passo - venv
 
 ----------------------------------------------------------------------
 
+  Paralelo ao diretorio clonado, cria um ambiente virtual Python3.8.5 via
+  terminal:
+
+  1-Python3.8.5 -m venv myvenv
+  
+  Ative o respectivo ambiente via terminal:
+
+  2-source myvenv/bin/activate
+  
+  Instale as dependencias contidas no arquivo requirements.txt no ambiente
+  virtual criado via terminal:
+  
+  3-pip3.8 install -r /requirements.txt
+
+----------------------------------------------------------------------
+Quarto Passo - O arquivo .env
+
+----------------------------------------------------------------------
+
+  1-Crie dentro da raiz mestre do programa Resale um arquivo 
+  chamado .env
+
+  2-Nele cole o conteudo do arquivo .env_development
+
+----------------------------------------------------------------------
+Quinto Passo - realizando as migrações no postgres.
+
+----------------------------------------------------------------------
+
+  1-Dentro da pasta Resale digite no terminal:
+  python manage.py makemigrations
+
+  2- Depois ....:
+  python manage.py migrate.
+
+----------------------------------------------------------------------
+Sexto Passo - Criando Super Usuario e entrando na Tela de Administração
+do Django.
+
+----------------------------------------------------------------------
