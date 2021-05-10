@@ -1,7 +1,33 @@
 from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
 
-# Finalidade---------------------------------
+"""
+    Neste arquivo é elaborado o ORM -Object-relational mapping.
+
+    Assim como no Flask nos temos o SQLAlchemy, no Django nos
+    temos o seu proprio ORM pronto para uso, seguindo a linha 
+    'Batteries included'.
+    
+    => https://docs.djangoproject.com/en/2.2/topics/db/models/
+
+    Cada classe representa uma Tabela no qual, por meio da 
+    classe Meta, é possivel estabelecer alguns comportamentos
+    já configurados.
+    
+    Exemplo:
+        ordering = ["nome"]
+
+    Seus campos da Tabela podem ser estabelecidos adicionando variaveis
+    e atribuindo a estas, as respectivas finalidades.
+    
+    Exemplo:
+
+    nome = sera um campo texto com as seguintes caracteristicas.
+    preço = sera um campo currency com as seguintes caracteristicas.
+"""
+
+
+# Finalidade----------------------#
 RESIDENCIAL = "residencial"
 COMERCIAL = "comercial"
 
@@ -9,7 +35,7 @@ FINALIDADE = (
     (RESIDENCIAL, "Residencial"),
     (COMERCIAL, "Comercial"),
 )
-# Status--------------------------------------
+# Status---------------------------#
 ATIVO = "ativo"
 INATIVO = "inativo"
 
@@ -17,7 +43,7 @@ STATUS = (
     (ATIVO, "Ativo"),
     (INATIVO, "Inativo"),
 )
-# Tipo de Residencia---------------------------
+# Tipo de Residencia----------------#
 CASA = "casa"
 APARTAMENTO = "apartamento"
 
@@ -33,9 +59,11 @@ class Imobiliaria(models.Model):
         verbose_name = "Imobiliaria"
         verbose_name_plural = "Imobiliarias"
 
+    # Determina os campos nome e endereço na tabela Imobiliaria.
     nome = models.CharField(max_length=255, null=False, blank=False)  # Obrigatorio
     endereço = models.CharField(max_length=255, null=True, blank=True)  # Obrigatorio
 
+    # Retorna o seguinte campo nome quando o objeto for chamado.
     def __str__(self):
         return self.nome
 
@@ -60,5 +88,6 @@ class Imovel(models.Model):
         related_name="imobiliaria",
     )
 
+    # Retorna o seguinte campo nome quando o objeto for chamado.
     def __str__(self):
         return self.nome
