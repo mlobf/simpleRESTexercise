@@ -1,14 +1,9 @@
 from rest_framework import serializers
-from core.models import Imovel, Imobiliaria
+from core.models import Imobiliaria, Imovel
+
 
 """
-    Foi utilizado uma abstração de alto nivel
-    do Django Rest Framework chamada serializers.ModelSerializer.
-    
-    => https://www.django-rest-framework.org/api-guide/serializers/#modelserializer
-
-    Esta tem por objetivo, tendo por base uma Tabela/Modelo, realizar
-    processo de "transformação" de determinados campos da Tabela em JSON.
+    Processo de "transformação" de determinados campos da Tabela em JSON.
 
     Atraves da Classe Meta é possivel determinal:
         ->model = O nome da Tabela.
