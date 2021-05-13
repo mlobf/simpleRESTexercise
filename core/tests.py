@@ -25,7 +25,7 @@ class UrlsTestCase(TestCase):
         """
         Testing if the imovel detail is working
         """
-        response = self.client.get("/api/imovel/detail/1")
+        response = self.client.get("/api/imovel/detail/1/")
         self.assertEqual(response.status_code, 200)
 
     def test_url_imobiliaria_list(self):
@@ -39,5 +39,5 @@ class UrlsTestCase(TestCase):
         """
         Testing if the imobilaria detail is working
         """
-        response = self.client.get("/api/imobiliaria/detail/1")
+        response = self.client.get("/api/imobiliaria/detail/1/")
         self.assertEqual(response.status_code, 200)
