@@ -65,7 +65,7 @@ class Imobiliaria(models.Model):
 
     # Retorna o seguinte campo nome quando o objeto for chamado.
     def __str__(self):
-        return self.nome
+        return self.pk
 
 
 class Imovel(models.Model):
@@ -90,4 +90,4 @@ class Imovel(models.Model):
 
     # Retorna o seguinte campo nome quando o objeto for chamado.
     def __str__(self):
-        return self.nome
+        return self.id
